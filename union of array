@@ -1,0 +1,26 @@
+import java.util.*;
+
+ public class UnionOfArrays {
+     public static void main(String[] args) {
+         int[] a = {1, 2, 3, 4, 5};
+         int[] b = {1, 2, 3};
+        
+         int unionCount = countUnionElements(a, b);
+         System.out.println("Output: " + unionCount);
+     }
+
+     public static int countUnionElements(int[] a, int[] b) {
+       
+         Set<Integer> unionSet = new HashSet<>();
+
+         for (int num : a) {
+          unionSet.add(num);
+         }
+
+         for (int num : b) {
+             unionSet.add(num);
+         }
+
+         return unionSet.size();
+     }
+ }
