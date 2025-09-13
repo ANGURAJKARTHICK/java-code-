@@ -1,0 +1,42 @@
+import java.util.*;  
+//binary search tree
+public class binarysearchtree {
+    class Node{
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
+    }
+    Node root;
+    void insert(int data) {
+        root = insertrec(root, data);//insertRec-> recursive function
+    }
+    Node insertrec(Node root,int data){
+        if (root == null) {
+            root = new Node(data);
+            return root;
+        }
+        if (data < root.data) {
+            root.left = insertrec(root.left, data);
+        } else {
+            root.right = insertrec(root.right, data);
+        }
+        return root;
+    }
+    void inorder(){
+        inorderrec(root);
+    }
+    void inorderrec(Node root){
+        if(root!=null){
+            inorderrec(root.left);
+            System.out.print(root.data+" ");
+            inorderrec(root.right);
+        }
+    }
+    void preorder(){
+        preorderrec(root);
+    }
+    void preorder
